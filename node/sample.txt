@@ -1,0 +1,2 @@
+1、D:\desktop下新建  buildiland.xml
+2、D:\jenkins\jobs  下新建 iland705文件夹 修改下面 comfig.xml和buildiland.xml

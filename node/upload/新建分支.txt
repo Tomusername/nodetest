@@ -1,0 +1,22 @@
+1、D:\desktop下新建  buildiland.xml
+2、D:\jenkins\jobs  下新建 iland705文件夹 修改下面 comfig.xml和buildiland.xml
+
+
+
+  if(arr[i].type === 1){
+                        if( arr[i].participant){
+                            if(arr[i].participant[0]){
+                                if( arr[i].participant[0][0] === userId){
+                                    groupId = arr[i].groupId;
+                                    break;
+                                }
+                            }else{
+                                console.log(arr[i].participant[0])
+                            }
+
+                        }else{
+                            console.log('第'+i+'条数据有问题')
+                            console.log(arr[i])
+                            //console.log(arr[i].participant[0])
+                        }
+                    }

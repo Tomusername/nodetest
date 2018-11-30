@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>node 测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <button id="list">点击获取</button>
+    <button id="update">点击修改</button>
+    <button id="add">点击新增</button>
+    <button id="delete">点击删除</button>
+    <button id="redfile">读取文件</button>
+
+    <h3>文件上传：</h3>
+    选择一个文件上传: <br />
+    <form action="http://localhost:8081/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="imageFile" multiple="multiple" />
+    <br />
+    <input type="submit" value="上传文件" />
+    </form>
+    
+</body>
+<script>
+    var date=new Date();
+    var timer=date.getTime().toString();
+    $('#list').click(function(){
+        console.log('ok')
+        $.ajax({
+            type:'get',
+            url:'http://localhost:8081/getUserList?name=mark&age=22&t='+timer,
+            success:function(data){
+                console.log(data)
+            },
+            error:function(){
+                console.log('error')
+            }
+        })
+    })
+    $('#update').click(function(){
+        console.log('修改')
+        $.ajax({
+            type:'post',
+            url:"http://localhost:8081/update?name=mark&age=22",
+            success:function(data){
+                console.log(data)
+            }
+        })
+    })
+    $('#add').click(function(){
+        console.log('新增')
+    })
+    $('#delete').click(function(){
+        console.log('删除')
+    })
+
+      $('#redfile').click(function(){
+        console.log('删除')
+        $.ajax({
+            type:'post',
+            url:"http://localhost:8081/redfile?name=mark&age=22",
+            success:function(data){
+                console.log(data)
+            }
+        })
+    })
+</script>
+</html>
